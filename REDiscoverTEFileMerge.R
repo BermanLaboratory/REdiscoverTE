@@ -1,6 +1,12 @@
-library('apeglm')
-library("DESeq2")
-library("biomaRt")
+list.of.packages <- c("BiocManager")
+new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"Package"])]
+if(length(new.packages)) install.packages(new.packages, repos='http://cran.us.r-project.org')
+
+# For Bioconductor package 
+list.of.packages <- c("edgeR")
+new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"Package"])]
+if(length(new.packages)) BiocManager::install(new.packages)
+
 library('glue')
 
 REDiscoverTEFileMerge <- function() {
